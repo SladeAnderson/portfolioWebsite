@@ -1,0 +1,63 @@
+$primary-color: #777575b9;
+$text-color: #fff;
+$mobile: 768px;
+
+:root {
+  --primary-color: #777575;
+  --secondary-color: #6B6B6B;
+  --tertiary-color: #898989;
+  --menu-pos: 'absolute';
+  --menu-top: 0;
+  --menu-left: 0;
+
+  --menu-color: #777575cb;
+  --text-color: #fff;
+  --body-bg-color: #777575b9;
+
+}
+
+.AppBody {
+  height: 85%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $primary-color;
+  margin: 5%;
+  margin-top: 2%;
+  overflow-y: scroll;
+  border-radius: 12px;
+
+  div {
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: $text-color;
+    font-weight: bold;
+    font-size: 6em;
+    text-align: center;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 2em;
+    }
+  }
+
+  h2 {
+    color: $text-color;
+    font-size: 2em;
+    text-align: center;
+    word-wrap: wrap;
+    width: 70%;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1em;
+    }
+  }
+
+
+}

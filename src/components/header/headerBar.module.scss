@@ -1,0 +1,62 @@
+$primary-color: #7775757a;
+$secondary-color: #6B6B6B7a;
+$tertiary-color: #8989897a;
+$text-color: #fff;
+$mobile: 768px;
+
+
+.headerBar {
+    background-color: $primary-color;
+    // opacity: 47%;
+    width: 100vw;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+        display: inline-block;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin: 15px 5%;
+        width: 12%;
+
+        a {
+            width: 100%;
+            color: $text-color;
+        }
+
+        @media screen and (max-width: $mobile) {
+            font-size: 1.2rem;
+            margin: 10px 5%;
+            flex-grow: 1;
+        }
+    }
+}
+
+.title {
+    color: $text-color;
+    margin-left: 3%;
+}
+
+.toolBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    button {
+        background: inherit;
+        border: none;
+        transform-origin: top left;
+        transition: transform 0.2s ease,background 0.2s ease;
+    
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}

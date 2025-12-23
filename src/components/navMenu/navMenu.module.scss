@@ -1,0 +1,82 @@
+@use 'sass:color';
+
+@import '../../index.scss';
+
+$menu-color: var(--menu-color);
+
+$text-color: #fff;
+
+$newPosition: var(--menu-pos,'absolute');
+$newTop: var(--menu-top, 0);
+$newLeft: var(--menu-left, 0);
+
+@keyframes SlideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes SlideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(110%);
+    }
+}
+
+.navMenu {
+    $border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: $menu-color;
+    color: $text-color;
+    z-index: 2;
+    display: block;
+    position: $newPosition;
+    top: $newTop;
+    left: $newLeft;
+    // width: 13%;
+    max-width: 20vw;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    text-align: left;
+    transform: translateX(0);
+    padding-right: 4%;
+  
+
+    @media screen and (max-width: 768px) {
+        max-width: 60vw;
+        padding: 15px;
+        padding-top: 0;
+        top: 56px;
+        // left: 10px;
+
+    }
+
+    ul {
+        list-style-type: none;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 5%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.opening {
+        animation: SlideIn 0.3s forwards;
+    }
+
+    &.closing {
+        animation: SlideOut 0.3s forwards;
+    }
+}
