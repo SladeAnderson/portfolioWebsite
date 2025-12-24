@@ -1,0 +1,47 @@
+$text-color: var(--text-color);
+$btn-color: var(--button-color);
+
+.paginator {
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+    width: min-content;
+    gap: 1%;
+    width: 100%;
+
+    button {
+        background: $btn-color;
+        border: 1px solid white;
+        color: $text-color;
+        border-radius: 6px;
+        transform-origin: top left;
+        transition: transform 0.2s ease,background 0.2s ease;
+        
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active &:not(:disabled)  {
+            transform: scale(.95);
+        }
+
+        &:disabled {
+            cursor: no-drop;
+        }
+    }
+
+    select {
+        background: $btn-color;
+        border: none;
+        color: $text-color;
+        border-radius: 6px;
+        border: 1px solid white;
+    }
+
+}
+
+.pageDisplay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

@@ -1,5 +1,23 @@
 @use 'sass:color';
- 
+
+@keyframes SlideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes SlideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(110%);
+    }
+}
+
 $primary-color: var(--primary-color,#777575);
 $secondary-color: var(--secondary-color,#6B6B6B);
 $tertiary-color: var(--tertiary-color,#898989);
@@ -41,4 +59,14 @@ body {
     // opacity: 47%;
     width: 100vw;
     height: 3%;
+}
+
+
+
+.slideIn {
+  animation: SlideIn 0.3s forwards;
+}
+
+.slideOut {
+  animation: SlideOut 0.3s forwards;
 }

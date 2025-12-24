@@ -1,12 +1,17 @@
 import styles from './App.module.scss';
-import { Component, createSignal } from 'solid-js';
+import { Accessor, Component, createEffect, createSignal } from 'solid-js';
 import ReloadPrompt from './ReloadPrompt';
+import { useSlideTransition } from './shared/customHooks/PageTransition';
 
 const App: Component = () => {
-  const [counter, setCounter] = createSignal(0);
-  setInterval(setCounter, 1000, (c: number) => c + 1);
+  const [SlideClass, setSlideClass] = createSignal<string>('');
 
-  return <div class={`${styles.AppBody}`}>
+  const { slideDirection, isSliding, slideClass } = useSlideTransition();
+
+  const animationClass = slideClass();
+
+
+  return <div class={`${styles.AppBody} ${animationClass()}`}>
     <div>
       <h1>Slade B. Anderson</h1>
       <h2>"Success is not final; failure is not fatal: it is the courage to continue that counts" - Winston Churchill</h2>

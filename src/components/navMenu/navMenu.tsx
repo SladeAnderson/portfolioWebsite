@@ -6,6 +6,7 @@ import { Portal } from "solid-js/web";
 import { isNullish } from "../../shared/customHooks/tools/tools";
 import { useShowMenu } from "../../shared/customHooks/useShowMenu";
 import { SharedHookContext } from "../rootApp";
+import { useSlideTransition } from "../../shared/customHooks/PageTransition";
 
 const [showList, setShowList] = createSignal(false);
 const [isTransitioning, setIsTransitioning] = createSignal(false);
@@ -36,6 +37,8 @@ export const NavMenu: Component<menuProps> = (props) => {
     const [shouldRender, setShouldRender] = createSignal(false);
     const [isClosing, setIsClosing] = createSignal(false);
     const [isOpening, setIsOpening] = createSignal(false);
+    
+    const { triggerSlideOut, triggerSlideIn, } = useSlideTransition();
 
     const context = useContext(SharedHookContext);
 
@@ -172,23 +175,26 @@ export const NavMenu: Component<menuProps> = (props) => {
         window.removeEventListener('resize',clickIntercept);
     })
 
+    const navigateFunc = (destiantion: string) => {
+        triggerSlideOut().then(()=>{
+            navigate(destiantion);
+            toggleSidebar();
+            triggerSlideIn();
+        })
+    }
    
     return (
         <Show when={shouldRender()}>
              <Portal ref={menuRef}>
                 <div ref={(ref)=>setMenuRef(ref)} class={`${styles.navMenu} ${isClosing() ? styles.closing : ''} ${isOpening() ? styles.opening : ''}`}>
                     <ul>
-                        <li onClick={()=>{
-                            navigate("/");
-                            toggleSidebar();
-                        }}>
+                        <li onClick={()=>navigateFunc("/")}>
                             <h3>Naviagtion</h3>
                         </li>
 
                         <For each={menuItems()}>
-                            {(tab) => <li onClick={(e)=>{
-                                navigate(tab.Link);
-                                toggleSidebar();
+                            {(tab) => <li onClick={(e)=> {
+                                navigateFunc(tab.Link);
                             }}>
                                 {tab.Name}    
                             </li>}

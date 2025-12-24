@@ -65,9 +65,16 @@ $newLeft: var(--menu-left, 0);
 
         li {
             padding: 5%;
+            transform-origin: top left;
+            transition: transform 0.2s ease,background 0.2s ease;
 
             &:hover {
                 cursor: pointer;
+                transform: scale(.9);
+            }
+
+            &:active {
+                transform: scale(.96);
             }
         }
     }

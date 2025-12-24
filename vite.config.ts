@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import devtools from 'solid-devtools/vite';
-import { VitePWA } from 'vite-plugin-pwa';
+import { ManifestOptions, VitePWA } from 'vite-plugin-pwa';
+
+const manifest: Partial<ManifestOptions> = require("./manifest.json");
 
 export default defineConfig({
   plugins: [
@@ -11,7 +13,8 @@ export default defineConfig({
       includeAssets: ["**/*.{png,svg,ico,json,jpg}"],
       devOptions: {
         enabled: true
-      }
+      },
+      manifest: manifest,
     
     })
   ],

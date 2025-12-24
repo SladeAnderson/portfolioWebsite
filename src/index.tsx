@@ -7,6 +7,7 @@ import App from './App';
 import { registerServiceWorker } from './pwa/register';
 import { RootApp } from './components/rootApp';
 import ReloadPrompt from './ReloadPrompt';
+import { Projects } from './components/projects/project';
 
 const root = document.getElementById('root');
 if (!root) {
@@ -42,7 +43,7 @@ if (root) {
         <ReloadPrompt />
         <Router root={RootApp}>
           <Route path="/" component={App} />
-          <Route path="/Projects" component={()=><div>Projects</div>}/>
+          <Route path="/Projects" component={Projects}/>
         </Router>
       </ErrorBoundary>
     ), root); 

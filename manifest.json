@@ -1,7 +1,7 @@
 {
-    "name": "Portfolio Website",
+    "name": "Solid Portfolio",
     "short_name": "Portfolio",
-    "description": "",
+    "description": "A Portfolio Website to showcase my programming skills.",
     "theme_color": "#777575",
     "icons": [
         {
