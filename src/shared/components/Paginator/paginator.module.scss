@@ -15,18 +15,19 @@ $btn-color: var(--button-color);
         color: $text-color;
         border-radius: 6px;
         transform-origin: top left;
-        transition: transform 0.2s ease,background 0.2s ease;
+        transition: transform 0.2s ease, background 0.2s ease;
         
         &:hover {
             cursor: pointer;
         }
 
-        &:active &:not(:disabled)  {
+        &:active {
             transform: scale(.95);
         }
 
         &:disabled {
             cursor: no-drop;
+            transform: scale(1);
         }
     }
 

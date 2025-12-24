@@ -28,7 +28,7 @@ export const Projects: Component = () => {
             name: "Professor's Team Tool",
             desc: "  A website that i designed for tracking your Pokémon team.\n\nCode Stack: Angular, Dexie, Scss,",
             imageUrl: ""
-        },
+        }
     ]);
 
     const [paginatedProjects, setPaginatedProjects] = createSignal<Project[]>([]);
