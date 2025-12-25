@@ -16,17 +16,17 @@ export const Projects: Component = () => {
     const [projects, setProjects] = createSignal<Project[]>([
         {
             name: "This Website",
-            desc: "  A Website to showcase my web development Projects & skills.\n\nCode Stack: SolidJS, Typescript, SCSS, HTML",
+            desc: "A Website to showcase my web development Projects & skills.\n\nCode Stack: SolidJS, Typescript, SCSS, HTML",
             imageUrl: "",
         },
         {
             name: "Arcane Dictionary",
-            desc: "  A website designed to help track dnd5e characters and other information\n\nCode Stack: SolidJS, Typescript, C#, CSS/SCSS, Dexie",
+            desc: "A website designed to help track dnd5e characters and other information\n\nCode Stack: SolidJS, Typescript, C#, CSS/SCSS, Dexie",
             imageUrl: ""
         },
         {
             name: "Professor's Team Tool",
-            desc: "  A website that i designed for tracking your Pokémon team.\n\nCode Stack: Angular, Dexie, Scss,",
+            desc: "A website that i designed for tracking your Pokémon team.\n\nCode Stack: Angular, Dexie, Scss,",
             imageUrl: ""
         }
     ]);

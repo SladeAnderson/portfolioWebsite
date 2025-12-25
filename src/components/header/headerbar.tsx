@@ -2,6 +2,8 @@ import { Accessor, Component, Setter } from "solid-js";
 import styles from "./headerBar.module.scss";
 import { TheBars } from "../../shared/components/icons/TheBars";
 import { useSidebarManage } from "../navMenu/navMenu";
+import { useSlideTransition } from "../../shared/customHooks/PageTransition";
+import { useNavigate } from "@solidjs/router";
 
 interface headerProps {
     list: [Accessor<boolean>, Setter<boolean>];
@@ -16,10 +18,22 @@ export interface Tab {
 
 export const HeaderBar: Component<headerProps> = (props) => {
     const {toggleSidebar} = useSidebarManage();
-    
+
+    const {triggerSlideOut, triggerSlideIn} = useSlideTransition();
+    const navigate = useNavigate();
+
+    const homeNaviagate = () => {
+        triggerSlideOut().then(()=>{
+            navigate("/")
+            triggerSlideIn();
+        })
+    }
     return <div class={`${styles.headerBar}`}>
         <span>
-            <a class={`AnchorEl`} href="/">
+            <a onclick={(e)=>{
+                e.preventDefault();
+                homeNaviagate()
+            }} class={`AnchorEl ${styles.homeButton}`}>
                 Portfolio
             </a>
         </span>
