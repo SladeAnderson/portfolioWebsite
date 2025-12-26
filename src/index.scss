@@ -30,6 +30,10 @@ $background-image1: url($image-url);
 
 $menu-color: rgba(var(--primary-color), .8);
 
+:root {
+    
+}
+
 .root {
     background-image: $background-image1;
     box-sizing: border-box;

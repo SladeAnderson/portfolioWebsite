@@ -1,0 +1,28 @@
+$primary-color: var(--body-bg-color);
+$body-height: var(--body-height);
+$text-color: var(--text-color);
+
+.AboutBody {
+    background: $primary-color;
+    margin: 5%;
+    margin-top: 1%;
+    overflow-y: scroll;
+    border-radius: 12px;
+    height: $body-height;
+    box-sizing: border-box;
+    color: $text-color;
+    // display: flex;
+    // flex-direction: column;
+    padding: 2%;
+    
+}
+
+.SkillsBox {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.description {
+    width: 75%;
+}

@@ -1,0 +1,27 @@
+$primary-color: var(--body-bg-color, #777575b9);
+$body-height: var(--body-height,80vh);
+$text-color: #fff;
+$mobile: 768px;
+
+@counter-style at-counter {
+    system: symbolic;
+    symbols: "@";
+    suffix: " ";
+}
+
+.contactBody {
+    height: $body-height;
+    box-sizing: border-box;
+    background: $primary-color;
+    margin: 5%;
+    margin-top: 1%;
+    overflow-y: scroll;
+    border-radius: 12px;
+    color: $text-color;
+    padding: 2%;
+
+    ul {
+        list-style-type: at-counter;
+    }
+}
+

@@ -8,6 +8,8 @@ import { registerServiceWorker } from './pwa/register';
 import { RootApp } from './components/rootApp';
 import ReloadPrompt from './ReloadPrompt';
 import { Projects } from './components/projects/project';
+import { About } from './components/about/about';
+import { Contact } from './components/contact/contact';
 
 const root = document.getElementById('root');
 if (!root) {
@@ -43,7 +45,9 @@ if (root) {
         <ReloadPrompt />
         <Router root={RootApp}>
           <Route path="/" component={App} />
-          <Route path="/Projects" component={Projects}/>
+          <Route path="/projects" component={Projects}/>
+          <Route path="/about" component={About}/>
+          <Route path="/contact" component={Contact}/>
         </Router>
       </ErrorBoundary>
     ), root); 
