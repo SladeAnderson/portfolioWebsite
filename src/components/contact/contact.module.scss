@@ -1,13 +1,8 @@
-$primary-color: var(--body-bg-color, #777575b9);
+$primary-color: var(--body-bg-color, #777575c5);
 $body-height: var(--body-height,80vh);
 $text-color: #fff;
 $mobile: 768px;
 
-@counter-style at-counter {
-    system: symbolic;
-    symbols: "@";
-    suffix: " ";
-}
 
 .contactBody {
     height: $body-height;
@@ -21,7 +16,23 @@ $mobile: 768px;
     padding: 2%;
 
     ul {
-        list-style-type: at-counter;
+        list-style-type: none;
+
+        li {
+            border-bottom: 1px solid white;
+            width: min-content;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            
+            span {
+                width: 8vw;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
 

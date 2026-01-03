@@ -1,0 +1,96 @@
+$success-color: green;
+$warning-color: rgb(244, 202, 16);
+$color-error: red;
+$btn-color: var(--button-color);
+$text-color: var(--text-color);
+
+.snack {
+    position: fixed;
+    bottom: 10px;
+    left: 45vw;
+    right: 45vw;
+    border-radius: 15px;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    max-width: 10vw;
+    padding: 5px;
+
+    @media screen and (max-width: 768px) {
+        left: 8vw;
+        right: 8vw;
+        bottom: 20vh;
+        max-width: 70vw;
+    }
+    span {
+        flex-grow: 1;
+        margin: auto 0;
+        text-wrap: wrap;
+    }
+
+    button {
+        background: $btn-color;
+        border: 1px solid white;
+        color: $text-color;
+        border-radius: 6px;
+        transform-origin: top left;
+        transition: transform 0.2s ease, background 0.2s ease;
+        margin: auto 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            transform: scale(.95);
+        }
+
+        &:disabled {
+            cursor: no-drop;
+            transform: scale(1);
+        }
+    }
+
+}
+
+.error {
+    border: 2px solid $color-error;
+    font-weight: bold;
+}
+
+.success {
+    $success-color: #4caf50;
+    border-color: $success-color;
+    border: 2px solid $success-color;
+    color: $success-color;
+}
+
+.info {
+    border: 2px solid var(--card-bg-color);
+}
+
+.warning {
+    $warning-color: #ff9800;
+    border-color: $warning-color;
+    border: 2px solid $warning-color;
+    color: $warning-color;
+}
+
+.open {
+    animation: slideIn 0.5s forwards;
+}
+
+.close {
+    animation: slideOut 0.5s forwards;
+}
+
+.primary {
+    background-color: var(--body-bg-color);
+    color: $text-color;
+    &:hover {
+        cursor: pointer;
+    }
+}

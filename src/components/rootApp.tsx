@@ -8,6 +8,7 @@ import { HeaderBar } from "./header/headerbar";
 import { effect } from "solid-js/web";
 import { useInjectServices } from "../shared/customHooks/injectServices";
 import { NavMenu } from "./navMenu/navMenu";
+import { SnackBarController } from "../shared/components/snackBar/snackBar";
 
 const defaultValue: HookContext = {
     isMobile: createSignal(mobileCheck())[0],
@@ -88,6 +89,8 @@ export const RootApp: Component<RouteSectionProps<unknown>> = (props) => {
                 <div class="body">
                     {props.children}
                 </div>
+
+                <SnackBarController /> 
              
              
             </div>
